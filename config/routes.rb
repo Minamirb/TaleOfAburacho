@@ -1,4 +1,6 @@
 TaleOfAburacho::Application.routes.draw do
+  resources :categories
+
   resources :feelings
 
   resources :sakes
