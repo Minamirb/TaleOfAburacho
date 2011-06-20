@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  sake_id: 1
+  member_id: 1
+  drunk: false
+  next_order: false
+
+two:
+  sake_id: 1
+  member_id: 1
+  drunk: false
+  next_order: false
