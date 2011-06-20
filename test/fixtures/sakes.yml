@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  company: MyString
+  price: 1
+  url: MyString
+  recommend: MyString
+  category_id: 1
+
+two:
+  name: MyString
+  company: MyString
+  price: 1
+  url: MyString
+  recommend: MyString
+  category_id: 1

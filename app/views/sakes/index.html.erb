@@ -1,0 +1,33 @@
+<h1>Listing sakes</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Company</th>
+    <th>Price</th>
+    <th>Url</th>
+    <th>Recommend</th>
+    <th>Category</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sakes.each do |sake| %>
+  <tr>
+    <td><%= sake.name %></td>
+    <td><%= sake.company %></td>
+    <td><%= sake.price %></td>
+    <td><%= sake.url %></td>
+    <td><%= sake.recommend %></td>
+    <td><%= sake.category_id %></td>
+    <td><%= link_to 'Show', sake %></td>
+    <td><%= link_to 'Edit', edit_sake_path(sake) %></td>
+    <td><%= link_to 'Destroy', sake, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Sake', new_sake_path %>

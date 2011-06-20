@@ -7,7 +7,7 @@ recommend:string
 category_id:integer
 EOF`
 
-rails g scaffold course $SAKES
+rails g scaffold sake $SAKES
 git add .
 git commit -a -m "generate scaffold SAKE."
 
@@ -23,7 +23,7 @@ hard_right:string
 umami:string
 EOF`
 
-rails g scaffold staff $FEELINGS
+rails g scaffold feeling $FEELINGS
 git add .
 git commit -a -m "generate scaffold FEELING."
 
@@ -32,7 +32,7 @@ CATEGORIES=`cat<<EOF
 name:string
 EOF`
 
-rails g scaffold school $CATEGORIES
+rails g scaffold category $CATEGORIES
 git add .
 git commit -a -m "generate scaffold CATEGORY."
 
@@ -44,7 +44,7 @@ drunk:boolean
 next_order:boolean
 EOF`
 
-rails g scaffold agent $HISTORIES
+rails g scaffold history $HISTORIES
 git add .
 git commit -a -m "generate scaffold HISTORY."
 
@@ -55,6 +55,6 @@ member_id:integer
 complete:boolean
 EOF`
 
-rails g scaffold realestate $CATEGORY_HISTORIES
+rails g scaffold category_history $CATEGORY_HISTORIES
 git add .
 git commit -a -m "generate scaffold CATEGORY_HISTORY."
