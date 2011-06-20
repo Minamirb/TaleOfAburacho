@@ -1,4 +1,6 @@
 TaleOfAburacho::Application.routes.draw do
+  get "top_page", :to => "top_page#index"
+
   resources :category_histories
 
   resources :histories
@@ -58,7 +60,7 @@ TaleOfAburacho::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'top_page#index'
 
   # See how all your routes lay out with "rake routes"
 
