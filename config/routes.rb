@@ -1,4 +1,6 @@
 TaleOfAburacho::Application.routes.draw do
+  resources :category_histories
+
   resources :histories
 
   resources :categories

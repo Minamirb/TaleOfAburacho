@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  category_id: 1
+  member_id: 1
+  complete: false
+
+two:
+  category_id: 1
+  member_id: 1
+  complete: false
