@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  sake_id: 1
+  member_id: 1
+  memo: MyString
+  doux_brut: MyString
+  bitter: MyString
+  rough: MyString
+  hard_right: MyString
+  umami: MyString
+
+two:
+  sake_id: 1
+  member_id: 1
+  memo: MyString
+  doux_brut: MyString
+  bitter: MyString
+  rough: MyString
+  hard_right: MyString
+  umami: MyString

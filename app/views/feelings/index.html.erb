@@ -1,0 +1,37 @@
+<h1>Listing feelings</h1>
+
+<table>
+  <tr>
+    <th>Sake</th>
+    <th>Member</th>
+    <th>Memo</th>
+    <th>Doux brut</th>
+    <th>Bitter</th>
+    <th>Rough</th>
+    <th>Hard right</th>
+    <th>Umami</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @feelings.each do |feeling| %>
+  <tr>
+    <td><%= feeling.sake_id %></td>
+    <td><%= feeling.member_id %></td>
+    <td><%= feeling.memo %></td>
+    <td><%= feeling.doux_brut %></td>
+    <td><%= feeling.bitter %></td>
+    <td><%= feeling.rough %></td>
+    <td><%= feeling.hard_right %></td>
+    <td><%= feeling.umami %></td>
+    <td><%= link_to 'Show', feeling %></td>
+    <td><%= link_to 'Edit', edit_feeling_path(feeling) %></td>
+    <td><%= link_to 'Destroy', feeling, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Feeling', new_feeling_path %>

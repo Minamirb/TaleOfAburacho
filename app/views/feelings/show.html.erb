@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Sake:</b>
+  <%= @feeling.sake_id %>
+</p>
+
+<p>
+  <b>Member:</b>
+  <%= @feeling.member_id %>
+</p>
+
+<p>
+  <b>Memo:</b>
+  <%= @feeling.memo %>
+</p>
+
+<p>
+  <b>Doux brut:</b>
+  <%= @feeling.doux_brut %>
+</p>
+
+<p>
+  <b>Bitter:</b>
+  <%= @feeling.bitter %>
+</p>
+
+<p>
+  <b>Rough:</b>
+  <%= @feeling.rough %>
+</p>
+
+<p>
+  <b>Hard right:</b>
+  <%= @feeling.hard_right %>
+</p>
+
+<p>
+  <b>Umami:</b>
+  <%= @feeling.umami %>
+</p>
+
+
+<%= link_to 'Edit', edit_feeling_path(@feeling) %> |
+<%= link_to 'Back', feelings_path %>
