@@ -45,9 +45,12 @@ h2{
 #header1 {
     width:185px;
     height:142px;
-    background-color:#0E6814;
     float:left;
     color:#4D4747;
+    background: -moz-linear-gradient(left, #0E6814, #FFFFF0 30%, #0E6814);
+    background: -webkit-gradient(linear, left center, right center, from(#0E6814),
+				 color-stop(0.3, #FFFFF0),
+				 to(#0E6814));
 }
 
 #header2 {
@@ -85,7 +88,7 @@ h2{
 #header3b {
     width:262px;
     height:32px;
-    background-color:#DD2900;
+    background-color:#D02900;
     color:inherit;
     float:left;
     border-top-left-radius: 10px;
@@ -151,17 +154,22 @@ h2{
 
 #container3 {
     width:751px;
-    height:350px;
+
     padding-left:5px;
     padding-right:5px;
 }
 
 #container3a {
     width:151px;
-     background-color:#0E6814;
+    background-color:#0E6814;
     float:left;
     color:#4D4747;
     padding-left:34px;
+    height: 100%;
+    background: -moz-linear-gradient(left, #0E6814, #FFFFF0 30%, #0E6814);
+    background: -webkit-gradient(linear, left center, right center, from(#0E6814),
+				 color-stop(0.3, #FFFFF0),
+				 to(#0E6814));
 }
 
 .container3a1 {
@@ -171,14 +179,12 @@ h2{
     padding-left:22px;
     padding-top:7px;
 }
-.container3a1 a{
-    color: white;
-}
 
 #container3b {
     width:304px;
-     float:left;
+    float:left;
     margin:0 0 12px;
+
 }
 
 #container3b1 {
@@ -214,14 +220,14 @@ h2{
 
 #container3c {
     width:262px;
-     float:left;
+    float:left;
     margin:0 0 12px;
 }
 
 .container3c1 {
     width:231px;
     height:30px;
-    background-color:#DD2900;
+    background-color:#D02900;
     color:#4D4747;
     padding-top:3px;
     padding-left:9px;
@@ -323,6 +329,7 @@ a:hover {
 }
 
 #container4 {
+    clear: both;
     width:751px;
     padding-left:5px;
     padding-right:5px;

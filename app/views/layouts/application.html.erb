@@ -4,7 +4,7 @@
   <title>Welcome to Tale of Aburacho</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <link href="style.css" rel="stylesheet" type="text/css">
-  <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag    "style" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
@@ -40,13 +40,13 @@
       <div id="container2b">
 
 	<div id="container2b1">
-	  今日は油長からアクセスしてるの？<br />下のメニューから選んでね。
+	  下のメニューから選んでください。
 	</div>
 
 	<div class="container2b2" style="margin-top:13px;">
 	  <%= image_tag('icon_arrow.gif', :size=>"8x7", :alt=>"") %>
-	  &nbsp;&nbsp;
-	  <a href="#" class="links">今まで飲んだリスト</a>
+	  &nbsp;
+	  <a href="#" class="links">今飲んでるものチェック！</a>
 	</div>
 
 	<div class="container2b2">
@@ -58,12 +58,18 @@
 	<div class="container2b2">
 	  <%= image_tag('icon_arrow.gif', :size=>"8x7", :alt=>"") %>
 	  &nbsp;&nbsp;&nbsp;&nbsp;
-	  <a href="#" class="links">最近飲んだ人リスト</a>
+	  <a href="#" class="links">今まで飲んだリスト</a>
 	</div>
 
 	<div class="container2b2">
 	  <%= image_tag('icon_arrow.gif', :size=>"8x7", :alt=>"") %>
 	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  <a href="#" class="links">最近飲んだ人リスト</a>
+	</div>
+
+	<div class="container2b2">
+	  <%= image_tag('icon_arrow.gif', :size=>"8x7", :alt=>"") %>
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	  <a href="#" class="links">あなたへのオススメ品</a>
 	</div>
 
