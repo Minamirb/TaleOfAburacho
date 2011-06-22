@@ -16,24 +16,20 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :company %><br />
-    <%= f.text_field :company %>
-  </div>
-  <div class="field">
     <%= f.label :price %><br />
     <%= f.number_field :price %>
   </div>
   <div class="field">
-    <%= f.label :url %><br />
-    <%= f.text_field :url %>
+    <%= f.label :url_large %><br />
+    <%= f.text_field :url_large %>
+  </div>
+  <div class="field">
+    <%= f.label :url_small %><br />
+    <%= f.text_field :url_small %>
   </div>
   <div class="field">
     <%= f.label :recommend %><br />
     <%= f.text_field :recommend %>
-  </div>
-  <div class="field">
-    <%= f.label :category_id %><br />
-    <%= f.number_field :category_id %>
   </div>
   <div class="actions">
     <%= f.submit %>
