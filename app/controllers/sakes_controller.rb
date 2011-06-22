@@ -10,6 +10,18 @@ class SakesController < ApplicationController
     end
   end
 
+  # GET /sakes/1
+  # GET /sakes/1.json
+  def show
+    @sake = Sake.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @sake }
+    end
+  end
+
+
   # GET /sakes/new
   # GET /sakes/new.json
   def new

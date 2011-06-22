@@ -24,6 +24,11 @@ class SakesControllerTest < ActionController::TestCase
     assert_redirected_to sake_path(assigns(:sake))
   end
 
+  test "should show sake" do
+    get :show, id: @sake.to_param
+    assert_response :success
+  end
+
   test "should get edit" do
     get :edit, id: @sake.to_param
     assert_response :success
