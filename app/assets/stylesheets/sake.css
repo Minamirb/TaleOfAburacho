@@ -24,9 +24,19 @@
 }
 
 #content {
-    padding-left:10px;
+    margin-left:10px;
+    margin-top:20px;
     float:left;
     overflow: auto;
+}
+
+#list_title {
+    height:32px;
+    background-color:#D02900;
+    color:inherit;
+    float:left;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 #table_wrap {
@@ -36,18 +46,7 @@
     float:left;
     font-size:12px;
 }
-/*
-.table {
-    width:220px;
-    height:Auto;
-    background-color:#F5E9D9;
-    margin:auto;
-    padding-top:14px;
-    font-size:12px;
-    color:#7E1A02;
-    text-align:justify;
-}
-*/
+
 #table_wrap td {
     height:22px;
     border-bottom:2px solid #F5E9D9;
