@@ -5,3 +5,47 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+def create_category_data()
+  Category.destroy_all
+  data = YAML.load_file('./db/category.yml')
+  data.each do |p|
+    Category.new {|category|
+      category.id = p[:id]
+      category.name = p[:name]
+    }.save
+  end
+end
+
+def create_sake_data()
+  Sake.destroy_all
+  data = YAML.load_file('./db/details.yml')
+  data.each do |p|
+    Sake.new {|sake|
+      sake.id = p[:id]
+      sake.name = p[:name] 
+      sake.price = p[:price] 
+      sake.recommend=  ""
+      sake.comment= p[:detail]
+      sake.url_large= p[:urllarge]
+      sake.url_small= p[:urlsmall]
+    }.save
+  end
+end
+
+def create_sake_category_data()
+  SakeCategory.destroy_all
+  data = YAML.load_file('./db/category.yml')
+  data.each do |p|
+    category_id = p[:id]
+    p[:list].each do |sake_id|
+      SakeCategory.new {|sake_cate|
+        sake_cate.sake_id= sake_id
+        sake_cate.category_id= category_id
+      }.save
+    end
+  end
+end
+create_category_data()
+create_sake_data()
+create_sake_category_data()
