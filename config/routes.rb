@@ -1,4 +1,6 @@
 TaleOfAburacho::Application.routes.draw do
+  devise_for :members
+
   get "top_page", :to => "top_page#index"
 
   resources :category_histories
