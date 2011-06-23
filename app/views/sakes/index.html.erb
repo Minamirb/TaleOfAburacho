@@ -27,20 +27,22 @@
   </div>
   <br />
   <div id="table_wrap">
-  <table>
-    <tr>
-      <th>名前</th>
-      <th>画像</th>
-      <th></th>
-    </tr>
-
-    <% @sakes.each do |sake| %>
+    <table>
       <tr>
-	<td><%= sake.name %></td>
-	<td><%= sake.url_small %></td>
-	<td><%= link_to '詳細', sake_path(sake) %></td>
+	<th>名前</th>
+	<th>画像</th>
+	<th></th>
       </tr>
-    <% end %>
-  </table>
+
+      <% @sakes.each do |sake| %>
+	<tr>
+	  <td><%= sake.name %></td>
+	  <td><%= sake.url_small %></td>
+	  <td><%= link_to '詳細', sake_path(sake) %></td>
+	</tr>
+      <% end %>
+    </table>
+  </div>
 </div>
 <br />
+

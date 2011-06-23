@@ -1,29 +1,51 @@
-<h1>Listing histories</h1>
+<%= stylesheet_link_tag "sake.css" %>
 
-<table>
-  <tr>
-    <th>Sake</th>
-    <th>Member</th>
-    <th>Drunk</th>
-    <th>Next order</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div id="container3a">
+  <div class="container3a1" style="margin-top:16px;">
+    <a href="#">About Us</a>
+  </div>
+  <div class="container3a1">
+    <a href="#">Serch</a>
+  </div>
+  <div class="container3a1">
+    <a href="#">最近飲んだ人の感想</a>
+  </div>
+  <div class="container3a1">
+    <a href="#">油長ホームページへ</a>
+  </div>
+  <div class="container3a1">
+    <a href="#">お酒にまつわる話</a>
+  </div>
+  <div class="container3a1">&nbsp;</div>
+</div>
 
-<% @histories.each do |history| %>
-  <tr>
-    <td><%= history.sake_id %></td>
-    <td><%= history.member_id %></td>
-    <td><%= history.drunk %></td>
-    <td><%= history.next_order %></td>
-    <td><%= link_to 'Show', history %></td>
-    <td><%= link_to 'Edit', edit_history_path(history) %></td>
-    <td><%= link_to 'Destroy', history, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
+<div id="content">
+  <%= link_to 'New History', new_history_path %>
 
+  <div id="list_title">
+    <h2>Listing histories</h2>
+  </div>
+  <br />
+  <div id="table_wrap">
+    <table>
+      <tr>
+	<th>Drunk</th>
+	<th>Sake</th>
+	<th>Next order</th>
+	<th></th>
+	<th></th>
+      </tr>
+
+      <% @histories.each do |history| %>
+	<tr>
+	  <td><%= history.drunk %></td>
+	  <td><%= history.sake_id %></td>
+	  <td><%= history.next_order %></td>
+	  <td><%= link_to '詳細', sake_path(sake) %></td>
+	  <td><%= link_to 'Edit', edit_history_path(history) %></td>
+	</tr>
+      <% end %>
+    </table>
+  </div>
+</div>
 <br />
-
-<%= link_to 'New History', new_history_path %>

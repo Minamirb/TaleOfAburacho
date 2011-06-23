@@ -52,13 +52,13 @@
 	<div class="container2b2">
 	  <%= image_tag('icon_arrow.gif', :size=>"8x7", :alt=>"") %>
 	  &nbsp;&nbsp;&nbsp;
-	  <a href="#" class="links">次飲むつもりリスト</a>
+	  <%= link_to '次飲むつもりリスト', histories_path(:next_order => "true"), :class => "links" %>
 	</div>
 
 	<div class="container2b2">
 	  <%= image_tag('icon_arrow.gif', :size=>"8x7", :alt=>"") %>
 	  &nbsp;&nbsp;&nbsp;&nbsp;
-	  <a href="#" class="links">今まで飲んだリスト</a>
+	  <%= link_to '今まで飲んだリスト', histories_path(:drunk => "true"), :class => "links" %>
 	</div>
 
 	<div class="container2b2">
