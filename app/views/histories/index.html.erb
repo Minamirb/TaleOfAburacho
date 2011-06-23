@@ -1,4 +1,4 @@
-<%= stylesheet_link_tag "sake.css" %>
+<%= stylesheet_link_tag "history.css" %>
 
 <div id="container3a">
   <div class="container3a1" style="margin-top:16px;">
@@ -22,30 +22,44 @@
 <div id="content">
   <%= link_to 'New History', new_history_path %>
 
+  <% if params[:next_order] == "true" %>
+    <% title = "次飲むつもりリスト" %>
+  <%  elsif params[:drunk] == "true" %>
+    <% title = "今まで飲んだリスト" %>
+  <% else %>
+    <% title = "履歴一覧" %>
+  <% end %>
+
   <div id="list_title">
-    <h2>Listing histories</h2>
+    <h2><%= title %></h2>
   </div>
   <br />
-  <div id="table_wrap">
-    <table>
-      <tr>
-	<th>Drunk</th>
-	<th>Sake</th>
-	<th>Next order</th>
-	<th></th>
-	<th></th>
-      </tr>
 
-      <% @histories.each do |history| %>
+  <% if @histories.blank? %>
+    <br />
+    <p>今ここに登録されているお酒はありません。</p>
+  <% else %>
+    <div id="table_wrap">
+      <table>
 	<tr>
-	  <td><%= history.drunk %></td>
-	  <td><%= history.sake_id %></td>
-	  <td><%= history.next_order %></td>
-	  <td><%= link_to '詳細', sake_path(sake) %></td>
-	  <td><%= link_to 'Edit', edit_history_path(history) %></td>
+	  <th>飲んだ</th>
+	  <th>名前</th>
+	  <th>画像</th>
+	  <th>次飲む</th>
+	  <th></th>
 	</tr>
-      <% end %>
-    </table>
+
+	<% @histories.each do |history| %>
+	  <tr>
+	    <td><%= history.drunk %></td>
+	    <td><%= history.sake.name %></td>
+	    <td><%= image_tag(history.sake.url_small) %></td>
+	    <td><%= history.next_order %></td>
+	    <td><%= link_to '詳細', sake_path(history.sake_id) %></td>
+	  </tr>
+	<% end %>
+      </table>
+    <% end %>
   </div>
 </div>
 <br />

@@ -2,7 +2,13 @@ class HistoriesController < ApplicationController
   # GET /histories
   # GET /histories.json
   def index
-    @histories = History.all
+    unless params[:next_order].blank?
+      @histories = History.where("next_order = ?", true).order("id").all
+    else
+      unless params[:drunk].blank?
+        @histories = History.where("drunk = ?", true).order("id").all
+      end
+    end
 
     respond_to do |format|
       format.html # index.html.erb
