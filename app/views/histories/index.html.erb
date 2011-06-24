@@ -63,18 +63,20 @@
   </div>
 </div>
 
-<table id="category_table">
-  <tr>
-    <th>Done</th>
-    <th>カテゴリ</th>
-  </tr>
-
-  <% @categories.each do |category| %>
+<%  if params[:drunk] == "true" %>
+  <table id="category_table">
     <tr>
-      <td><%= category.id %></td>
-      <td><%= category.name %></td>
+      <th>Done</th>
+      <th>カテゴリ</th>
     </tr>
-  <% end %>
-</table>
+
+    <% @categories.each do |category| %>
+      <tr>
+	<td><%= category.id %></td>
+	<td><%= category.name %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
 
 <br />
