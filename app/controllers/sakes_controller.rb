@@ -1,8 +1,14 @@
+# -*- coding: utf-8 -*-
 class SakesController < ApplicationController
   # GET /sakes
   # GET /sakes.json
   def index
-    @sakes = Sake.all
+    @sake = Sake.new(params[:sake])
+    @sakes = if params[:sake] && params[:sake][:name]
+               Sake.where("name like ?", "%#{params[:sake][:name]}%")
+             else
+               Sake
+             end.all
 
     respond_to do |format|
       format.html # index.html.erb
