@@ -27,7 +27,6 @@
     margin-left:10px;
     margin-top:20px;
     float:left;
-    overflow: auto;
 }
 
 #list_title {
@@ -39,6 +38,12 @@
     border-top-right-radius: 10px;
 }
 
+#side_bar{
+    overflow: auto;
+    height: 546px;
+    width: 390px;
+}
+
 #table_wrap {
     border:1px solid #F2DBBA;
     background-color:#F5E9D9;
@@ -48,10 +53,23 @@
 }
 
 #table_wrap td {
-    height:22px;
     border-bottom:2px solid #F5E9D9;
     background-color:#F2DBB9;
     color:#4D4747;
     padding-left:2px;
     margin:auto;
+}
+
+#category_table {
+    margin-left:10px;
+    margin-top:40px;
+    float: right;
+    font-size: 12px;
+    text-align:center;
+    border-spacing: 0;
+}
+
+#category_table td{
+    height: 25px;
+    border-bottom-style: groove;
 }
