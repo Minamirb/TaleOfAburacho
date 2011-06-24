@@ -202,7 +202,7 @@ h2{
 #container3b1 h2 {
     height:33px;
     text-indent:-2000px;
-    background:url(welcome.gif) 0 10px no-repeat;
+    background:url(welcome_transparent.gif) 0 10px no-repeat;
 }
 
 .brown {
@@ -359,6 +359,6 @@ a:hover {
 #container4 p {
     text-align:center;
     clear:both;
-    padding:15px 0;
+    padding:10px 0;
     font-size:12px;
 }

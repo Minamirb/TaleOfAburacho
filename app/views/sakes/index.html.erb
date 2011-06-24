@@ -20,15 +20,16 @@
 </div>
 
 <div id="content">
-  <%= link_to '新規登録', new_sake_path %>
 
   <div id="list_title">
     <h2>お酒リスト</h2>
   </div>
   <br />
-  <div id="table_wrap">
-    <table>
+
+  <div id="side_bar">
+    <table id="table_wrap">
       <tr>
+	<th>飲んだ</th>
 	<th>名前</th>
 	<th>画像</th>
 	<th></th>
@@ -36,13 +37,22 @@
 
       <% @sakes.each do |sake| %>
 	<tr>
+	  <td></td>
 	  <td><%= sake.name %></td>
-	  <td><%= sake.url_small %></td>
+	  <td><%= image_tag(sake.url_small, :size => "40x80") %></td>
 	  <td><%= link_to '詳細', sake_path(sake) %></td>
 	</tr>
       <% end %>
     </table>
   </div>
+</div>
+
+<div id="serch_wrap">
+  <%= form_for(@sake, :method => 'get') do |f| %>
+    <%= f.text_field :name , :size => "20" %>
+    <br />
+    <%= f.submit %>
+  <% end %>
 </div>
 <br />
 

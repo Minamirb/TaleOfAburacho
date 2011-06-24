@@ -2,6 +2,8 @@ class HistoriesController < ApplicationController
   # GET /histories
   # GET /histories.json
   def index
+    @categories = Category.all
+
     unless params[:next_order].blank?
       @histories = History.where("next_order = ?", true).order("id").all
     else
