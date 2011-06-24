@@ -2,10 +2,10 @@
 
 
 <div id="sakeDetail" > 
-    <p id="sake_image" style="float:left;" >
+  <p id="sake_image" style="float:left;" >
     <%= image_tag(@sake.url_small) %>
-    </p>
-    <p id="sake_name">
+  </p>
+  <p id="sake_name">
     <b> 名前 : </b>
     <%= @sake.name %>
   </p>
@@ -20,7 +20,21 @@
     <%= raw(@sake.comment.gsub("。","。<br>")) %>
   </p>
 </div>
-<%= link_to 'Edit', edit_sake_path(@sake) %> |
+
+<div id="feelings" > 
+    <% @feel.each do |feel| %>
+        <P class ="feeling">
+        <b> 甘味: </b> <%= feel.doux_brut %>
+        <b> 苦味: </b>  <%= feel.bitter %>
+        <b> 渋み: </b>  <%= feel.rough %>
+        <b> 濃さ: </b>  <%= feel.hard_right %>
+        <b> 旨味: </b>  <%= feel.umami%>
+        <b> ユーザー: </b>  <%= feel.member_id%>
+        <b> 感想: </b> <%= feel.memo %>
+        </p>
+    <% end %>
+    </div>
+
 <%= link_to 'Back', sakes_path %>
 <style type="text/css">
 

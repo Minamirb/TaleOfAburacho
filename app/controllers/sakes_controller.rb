@@ -15,6 +15,7 @@ class SakesController < ApplicationController
   def show
     @sake = Sake.find(params[:id])
 
+    @feel =Feeling.where(:sake_id =>params[:id])
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @sake }
