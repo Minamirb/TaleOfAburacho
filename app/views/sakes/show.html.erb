@@ -1,35 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @sake.name %>
-</p>
 
-<p>
-  <b>Company:</b>
-  <%= @sake.company %>
-</p>
-
-<p>
-  <b>Price:</b>
-  <%= @sake.price %>
-</p>
-
-<p>
-  <b>Url:</b>
-  <%= @sake.url %>
-</p>
-
-<p>
-  <b>Recommend:</b>
-  <%= @sake.recommend %>
-</p>
-
-<p>
-  <b>Category:</b>
-  <%= @sake.category_id %>
-</p>
-
-
+<div id="sakeDetail" > 
+    <p id="sake_image" style="float:left;" >
+    <%= image_tag(@sake.url_small) %>
+    </p>
+    <p id="sake_name">
+    <b> 名前 : </b>
+    <%= @sake.name %>
+  </p>
+  <p id="sake_price">
+    <b> 価格 : </b>
+    <% price = @sake.price.to_s.gsub(/(\d)(?=(\d{3})+(?!\d))/, '\1,').to_s + '円' %>
+    <%= price %>
+  </p>
+  <BR clear="left">
+  <p id="sake_comment">
+    <b> 説明 : </b>
+    <%= raw(@sake.comment.gsub("。","。<br>")) %>
+  </p>
+</div>
 <%= link_to 'Edit', edit_sake_path(@sake) %> |
 <%= link_to 'Back', sakes_path %>
+<style type="text/css">
+
+
+p.sake_image{
+float: left;
+margin: 500px 50px 30px 50px;
+}
+
+</style>
