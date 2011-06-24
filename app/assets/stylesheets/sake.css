@@ -60,16 +60,9 @@
     margin:auto;
 }
 
-#category_table {
+#serch_wrap {
     margin-left:10px;
-    margin-top:40px;
+    margin-top:50px;
     float: right;
     font-size: 12px;
-    text-align:center;
-    border-spacing: 0;
-}
-
-#category_table td{
-    height: 25px;
-    border-bottom-style: groove;
 }

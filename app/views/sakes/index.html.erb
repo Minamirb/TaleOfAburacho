@@ -48,6 +48,11 @@
 </div>
 
 <div id="serch_wrap">
+  <%= form_for(@sake, :method => 'get') do |f| %>
+    <%= f.text_field :name , :size => "20" %>
+    <br />
+    <%= f.submit %>
+  <% end %>
 </div>
 <br />
 
