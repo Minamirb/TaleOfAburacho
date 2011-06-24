@@ -1,47 +1,66 @@
 <p id="notice"><%= notice %></p>
-
-
 <div id="sakeDetail" > 
-  <p id="sake_image" style="float:left;" >
-    <%= image_tag(@sake.url_small) %>
-  </p>
-  <p id="sake_name">
-    <b> 名前 : </b>
-    <%= @sake.name %>
-  </p>
-  <p id="sake_price">
-    <b> 価格 : </b>
+  <div id="sakeImage" >
+    <%= image_tag(@sake.url_large, :size=>"90x188") %>
+  </div>
+  <p style="font-size:20px;"><strong><%= @sake.name %></strong></p>
+   <p><%= raw(@sake.comment.gsub("。","。<br>")) %></p>
+  <br>
+  <p><strong> 価格 : </strong>
     <% price = @sake.price.to_s.gsub(/(\d)(?=(\d{3})+(?!\d))/, '\1,').to_s + '円' %>
     <%= price %>
   </p>
-  <BR clear="left">
-  <p id="sake_comment">
-    <b> 説明 : </b>
-    <%= raw(@sake.comment.gsub("。","。<br>")) %>
-  </p>
 </div>
-
+ 
+<BR clear="left" >
 <div id="feelings" > 
-    <% @feel.each do |feel| %>
-        <P class ="feeling">
-        <b> 甘味: </b> <%= feel.doux_brut %>
-        <b> 苦味: </b>  <%= feel.bitter %>
-        <b> 渋み: </b>  <%= feel.rough %>
-        <b> 濃さ: </b>  <%= feel.hard_right %>
-        <b> 旨味: </b>  <%= feel.umami%>
-        <b> ユーザー: </b>  <%= feel.member_id%>
-        <b> 感想: </b> <%= feel.memo %>
-        </p>
-    <% end %>
-    </div>
+  <% if @feel.length >0 %>
+    <h4 ><b> 感想 </b></h4>
+  <% end %>
+  <% feel = @feel[0] %>
+  <b> 名前: </b>  <%= feel.member_id%>
+  <b> 甘味: </b> <%= feel.doux_brut %>
+  <b> 渋み: </b>  <%= feel.rough %>
+  <b> 濃さ: </b>  <%= feel.hard_right %>
+  <b> 旨味: </b>  <%= feel.umami%>
+  <b> 感想: </b> <%= feel.memo %>
+</div>
+<div id="feelings" > 
+  <% if @feel.length >0 %>
+    <h4 ><b> コメント</b></h4>
+  <% end %>
+  <% @feel.each do |feel| %>
+      <span style ='font-size:12px;color:gray;'><strong>&nbsp;&nbsp; <%= feel.member_id%> &nbsp;&nbsp;&nbsp;&nbsp;</strong>
+      <%= feel.updated_at%></span> 
+      <br>&nbsp;&nbsp;
+      <%= feel.memo %>
+    <hr class = "feelsBorder" noshade>
+  <% end %>
+</div>
 
 <%= link_to 'Back', sakes_path %>
 <style type="text/css">
-
-
-p.sake_image{
-float: left;
-margin: 500px 50px 30px 50px;
+hr.feelsBorder {
+background-color: white;
+border-color: grey;
+border-top: dashed 1px;
+border-bottom-width: 0px;
 }
-
+div#feelings h4{
+border-style: none none dashed solid;
+border-color: -moz-use-text-color -moz-use-text-color rgb(51, 153, 204) rgb(51, 153, 204); 
+border-width: medium medium 1px 5px; 
+padding: 5px 10px;
+margin-bottom: 1em; 
+background-color: transparent;
+font-size:14px;
+}
+div#sakeDetail{
+font-size:16px;
+padding: 5px 5px 0px 0px;
+}
+div#sakeImage{
+float:left;
+padding: 0px 20px 5px 0px; 
+}
 </style>
