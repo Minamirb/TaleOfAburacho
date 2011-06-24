@@ -42,7 +42,7 @@
 #side_bar{
     overflow: auto;
     height: 546px;
-    width: 556px;
+    width: 390px;
 }
 
 #table_wrap {
@@ -59,4 +59,18 @@
     color:#4D4747;
     padding-left:2px;
     margin:auto;
+}
+
+#category_table {
+    margin-left:10px;
+    margin-top:40px;
+    float: right;
+    font-size: 12px;
+    text-align:center;
+    border-spacing: 0;
+}
+
+#category_table td{
+    height: 25px;
+    border-bottom-style: groove;
 }
