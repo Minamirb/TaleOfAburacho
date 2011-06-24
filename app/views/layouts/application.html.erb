@@ -39,39 +39,46 @@
 
       <div id="container2b">
 
-	<div id="container2b1">
-	  下のメニューから選んでください。
-	</div>
+	<% if current_member %>
+	  <div id="container2b1">
+	    下のメニューから選んでください。
+	  </div>
 
-	<div class="container2b2" style="margin-top:13px;">
-	  <%= image_tag('icon_arrow.gif', :size=>"8x7", :alt=>"") %>
-	  &nbsp;
-	  <%= link_to '今飲んでるものチェック！', sakes_path, :class => "links" %>
-	</div>
+	  <div class="container2b2" style="margin-top:13px;">
+	    <%= image_tag('icon_arrow.gif', :size=>"8x7", :alt=>"") %>
+	    &nbsp;
+	    <%= link_to '今飲んでるものチェック！', sakes_path, :class => "links" %>
+	  </div>
 
-	<div class="container2b2">
-	  <%= image_tag('icon_arrow.gif', :size=>"8x7", :alt=>"") %>
-	  &nbsp;&nbsp;&nbsp;
-	  <%= link_to '次飲むつもりリスト', histories_path(:next_order => "true"), :class => "links" %>
-	</div>
+	  <div class="container2b2">
+	    <%= image_tag('icon_arrow.gif', :size=>"8x7", :alt=>"") %>
+	    &nbsp;&nbsp;&nbsp;
+	    <%= link_to '次飲むつもりリスト', histories_path(:next_order => "true"), :class => "links" %>
+	  </div>
 
-	<div class="container2b2">
-	  <%= image_tag('icon_arrow.gif', :size=>"8x7", :alt=>"") %>
-	  &nbsp;&nbsp;&nbsp;&nbsp;
-	  <%= link_to '今まで飲んだリスト', histories_path(:drunk => "true"), :class => "links" %>
-	</div>
+	  <div class="container2b2">
+	    <%= image_tag('icon_arrow.gif', :size=>"8x7", :alt=>"") %>
+	    &nbsp;&nbsp;&nbsp;&nbsp;
+	    <%= link_to '今まで飲んだリスト', histories_path(:drunk => "true"), :class => "links" %>
+	  </div>
 
-	<div class="container2b2">
-	  <%= image_tag('icon_arrow.gif', :size=>"8x7", :alt=>"") %>
-	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	  <a href="#" class="links">最近飲んだリスト</a>
-	</div>
+	  <div class="container2b2">
+	    <%= image_tag('icon_arrow.gif', :size=>"8x7", :alt=>"") %>
+	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	    <a href="#" class="links">最近飲んだリスト</a>
+	  </div>
 
-	<div class="container2b2">
-	  <%= image_tag('icon_arrow.gif', :size=>"8x7", :alt=>"") %>
-	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	  <a href="#" class="links">あなたへのオススメ品</a>
-	</div>
+	<% else %>
+	  <div id="container2b1">
+	    ログインしてください。
+	  </div>
+
+	  <div class="container2b2" style="margin-top:13px;">
+	    <%= image_tag('icon_arrow.gif', :size=>"8x7", :alt=>"") %>
+	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	    <%= link_to 'ログイン', new_member_session_path, :class => "links" %>
+	  </div>
+	<% end %>
 
       </div>
     </div>	
