@@ -39,8 +39,8 @@
     <br />
     <p>今ここに登録されているお酒はありません。</p>
   <% else %>
-    <div id="table_wrap">
-      <table>
+    <div id="side_bar">
+      <table id="table_wrap">
 	<tr>
 	  <th>飲んだ</th>
 	  <th width=210>名前</th>
@@ -53,7 +53,7 @@
 	  <tr>
 	    <td><%= history.drunk %></td>
 	    <td><%= history.sake.name %></td>
-	    <td><%= image_tag(history.sake.url_small) %></td>
+	    <td><%= image_tag(history.sake.url_small, :size => "50x100") %></td>
 	    <td><%= history.next_order %></td>
 	    <td><%= link_to '詳細', sake_path(history.sake_id) %></td>
 	  </tr>
