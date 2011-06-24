@@ -37,7 +37,7 @@
 
       <% @sakes.each do |sake| %>
 	<tr>
-	  <td><%= sake.history.drunk %></td>
+	  <td></td>
 	  <td><%= sake.name %></td>
 	  <td><%= image_tag(sake.url_small, :size => "40x80") %></td>
 	  <td><%= link_to '詳細', sake_path(sake) %></td>
