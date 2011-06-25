@@ -11,44 +11,58 @@
     </div>
   <% end %>
 
- <div id="sakeDetail" > 
-   <div id="sakeImage" >
-     <%= image_tag(@sake.url_large, :size=>"90x188") %>
-   </div>
-   <p style="font-size:20px;"><strong><%= @sake.name %></strong></p>
-   <br>
- </div>
-  <div class="field">
-    <%= @sake.id %>
+  <div id="sakeDetail" > 
+    <div id="sakeImage" >
+      <%= image_tag(@sake.url_large, :size=>"90x188") %>
+    </div>
+    <div id="update_data" > 
+      <div class="field">
+        コメント  : &nbsp;&nbsp;&nbsp; <%= f.text_field :memo %>
+      </div>
+      <div class="field">
+        甘味 &nbsp;&nbsp;&nbsp; : &nbsp;&nbsp;&nbsp; <%= f.text_field :doux_brut %>
+      </div>
+      <div class="field">
+        苦味 &nbsp;&nbsp;&nbsp; : &nbsp;&nbsp;&nbsp; <%= f.text_field :bitter %>
+      </div>
+      <div class="field">
+        渋み &nbsp;&nbsp;&nbsp; : &nbsp;&nbsp;&nbsp; <%= f.text_field :rough %>
+      </div>
+      <div class="field">
+        濃淡 &nbsp;&nbsp;&nbsp; : &nbsp;&nbsp;&nbsp; <%= f.text_field :hard_right %>
+      </div>
+      <div class="field">
+        旨味 &nbsp;&nbsp;&nbsp; : &nbsp;&nbsp;&nbsp; <%= f.text_field :umami %>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <%= current_member.id %>
-  </div>
-  <div class="field">
-    コメント  :  <br />
-    <%= f.text_field :memo %>
-  </div>
-  <div class="field">
-    甘味  :  <br />
-    <%= f.text_field :doux_brut %>
-  </div>
-  <div class="field">
-    苦味  :  <br />
-    <%= f.text_field :bitter %>
-  </div>
-  <div class="field">
-    渋み  :  <br />
-    <%= f.text_field :rough %>
-  </div>
-  <div class="field">
-    濃淡  :  <br />
-    <%= f.text_field :hard_right %>
-  </div>
-  <div class="field">
-    旨味  :  <br />
-    <%= f.text_field :umami %>
-  </div>
+  <BR clear="left" >
   <div class="actions">
     <%= f.submit %>
   </div>
+<style type="text/css">
+hr.feelsBorder {
+background-color: white;
+border-color: grey;
+border-top: dashed 1px;
+border-bottom-width: 0px;
+}
+div#feelings h4{
+border-style: none none dashed solid;
+border-color: -moz-use-text-color -moz-use-text-color rgb(51, 153, 204) rgb(51, 153, 204); 
+border-width: medium medium 1px 5px; 
+padding: 5px 10px;
+margin-bottom: 1em; 
+background-color: transparent;
+font-size:14px;
+}
+div#sakeDetail{
+font-size:16px;
+padding: 5px 5px 0px 0px;
+}
+div#sakeImage{
+float:left;
+padding: 0px 20px 5px 0px; 
+}
+</style>
 <% end %>
