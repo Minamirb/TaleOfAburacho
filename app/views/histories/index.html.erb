@@ -59,10 +59,18 @@
 
 	<% @histories.each do |history| %>
 	  <tr>
-	    <td><%= history.drunk %></td>
+	    <% if history.drunk = "true" %>
+	      <td><%= image_tag("star.gif", :size => "30x30") %></td>
+	    <% else %>
+	      <td></td>
+	    <% end %>
 	    <td><%= history.sake.name %></td>
 	    <td><%= image_tag(history.sake.url_small, :size => "40x80") %></td>
-	    <td><%= history.next_order %></td>
+	    <% if history.next_order = "true" %>
+	      <td><%= image_tag("choko.gif", :size => "30x30") %></td>
+	    <% else %>
+	      <td></td>
+	    <% end %>
 	    <td><%= link_to '詳細', sake_path(history.sake_id) %></td>
 	  </tr>
 	<% end %>

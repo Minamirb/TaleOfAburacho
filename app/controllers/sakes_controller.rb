@@ -9,7 +9,7 @@ class SakesController < ApplicationController
              else
                Sake
              end.all
-    @histories = History.where("member_id = ?", current_member.id).all
+    @histories = History.where("member_id = ?", current_member.id).where("drunk = ?", true).select("sake_id").map{|t| t.sake_id}
 
     respond_to do |format|
       format.html # index.html.erb
@@ -23,6 +23,7 @@ class SakesController < ApplicationController
     @sake = Sake.find(params[:id])
     @my_feel =Feeling.where(:sake_id =>params[:id],:member_id =>current_member.id)
     @our_feel =Feeling.where( :sake_id =>params[:id]).limit(10).order('updated_at DESC')
+    @history = History.where("member_id = ? AND sake_id = ?", current_member.id, @sake.id).where("drunk = ?", true)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @sake }
