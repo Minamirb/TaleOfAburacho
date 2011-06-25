@@ -17,16 +17,17 @@
   </p>
 </div>
 <BR clear="left" >
+<p style="font-size:20px;"><strong><%= link_to '感想追加', new_sake_feeling_path(@sake)  %> </strong></p>
 <div id="feelings" > 
   <% if @my_feel.length >0 %>
     <h4 ><b> 感想 </b></h4>
     <% @my_feel.each do |feel| %>
-      <%= button_to '変更', edit_sake_feeling_path(@sake,feel) %> 
-      <b> 名前: </b>  <%= feel.member_id%>
-      <b> 甘味: </b> <%= feel.doux_brut %>
-      <b> 渋み: </b>  <%= feel.rough %>
-      <b> 濃さ: </b>  <%= feel.hard_right %>
-      <b> 旨味: </b>  <%= feel.umami%>
+      <b> 名前: </b>  <%= feel.member_id%>&nbsp;&nbsp;&nbsp;&nbsp;
+      <b> 甘味: </b> <%= feel.doux_brut %>&nbsp;&nbsp;&nbsp;&nbsp;
+      <b> 渋み: </b>  <%= feel.rough %>&nbsp;&nbsp;&nbsp;&nbsp;
+      <b> 濃さ: </b>  <%= feel.hard_right %>&nbsp;&nbsp;&nbsp;&nbsp;
+      <b> 旨味: </b>  <%= feel.umami%>&nbsp;&nbsp;&nbsp;&nbsp;
+      <br>
       <b> 感想: </b> <%= feel.memo %>
       <hr class = "feelsBorder" noshade>
     <% end %>
@@ -45,7 +46,6 @@
   <% end %>
 </div>
 
-<h4 ><%= link_to '感想追加', new_sake_feeling_path(@sake)  %> </h4 >
 <h4 ><%= link_to '←戻る', sakes_path %></h4 >
 <style type="text/css">
 hr.feelsBorder {
