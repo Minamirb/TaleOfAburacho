@@ -46,9 +46,9 @@
       <% @sakes.each do |sake| %>
 	<tr>
 	  <% if @histories.include? sake.id %>
-	    <td>飲んだ</td>
+	    <td><%= image_tag("star.gif", :size => "30x30") %></td>
 	  <% else %>
-	    <td>まだ</td>
+	    <td></td>
 	  <% end %>
 	  <td><%= sake.name %></td>
 	  <td><%= image_tag(sake.url_small, :size => "40x80") %></td>
