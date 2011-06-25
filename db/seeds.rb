@@ -50,28 +50,36 @@ end
 
 def create_feeling_data()
   Feeling.destroy_all
-  Feeling.new {|f|
-    f.sake_id=  '4'
-    f.member_id='1'
-    f.doux_brut=  '甘い'
-    f.bitter=  '苦い'
-    f.rough=  '渋い'
-    f.hard_right=  '濃い'
-    f.hard_right=  '旨い'
-    f.memo =  'なかなかの味'
-  }.save
-  Feeling.new {|f|
-    f.sake_id=  '4'
-    f.member_id='2'
-    f.doux_brut=  '甘くない'
-    f.bitter=  '苦くない'
-    f.rough=  '渋くない'
-    f.hard_right=  '薄い'
-    f.hard_right=  '旨い'
-    f.memo =  'いまいち'
-  }.save
+#   Feeling.new {|f|
+#     f.sake_id=  '4'
+#     f.member_id='1'
+#     f.doux_brut=  '甘い'
+#     f.bitter=  '苦い'
+#     f.rough=  '渋い'
+#     f.hard_right=  '濃い'
+#     f.hard_right=  '旨い'
+#     f.memo =  'なかなかの味'
+#   }.save
+#   Feeling.new {|f|
+#     f.sake_id=  '4'
+#     f.member_id='2'
+#     f.doux_brut=  '甘くない'
+#     f.bitter=  '苦くない'
+#     f.rough=  '渋くない'
+#     f.hard_right=  '薄い'
+#     f.hard_right=  '旨い'
+#     f.memo =  'いまいち'
+#   }.save
 end
+
+def destroy
+  History.destroy_all
+  CategoryHistory.destroy_all
+end
+
+destroy()
 create_feeling_data()
 create_category_data()
 create_sake_data()
 create_sake_category_data()
+
