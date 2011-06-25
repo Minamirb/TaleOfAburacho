@@ -49,6 +49,9 @@ class HistoriesController < ApplicationController
   # POST /histories.json
   def create
     @history = History.new(params[:history])
+    @history.sake_id = params[:sake_id]
+    @history.member_id = current_member.id
+    @history.drunk = true
 
     respond_to do |format|
       if @history.save

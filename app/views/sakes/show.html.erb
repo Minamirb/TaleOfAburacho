@@ -3,11 +3,14 @@
   <div id="sakeImage" >
     <%= image_tag(@sake.url_large, :size=>"90x188") %>
   </div>
-  <% if @my_feel.length >0 %>
+
   <div id="starImage" >
-    <img alt="star" src="/star.jpg"/> 
+    <% unless @history.blank? %>
+      <%= image_tag("star.gif", :size => "70x70") %>
+    <% else %>
+      <input type="button" value="飲んだ！" id="drunk_button">
+    <% end %>
   </div>
-  <% end %>
   <p style="font-size:20px;"><strong><%= @sake.name %></strong></p>
    <p><%= raw(@sake.comment.gsub("。","。<br>")) %></p>
   <br>
