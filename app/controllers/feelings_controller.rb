@@ -43,12 +43,16 @@ class FeelingsController < ApplicationController
   # POST /feelings
   # POST /feelings.json
   def create
+    @sake= Sake.find(params[:sake_id])
     @feeling = Feeling.new(params[:feeling])
-    @feeling.sake_id= params[:sake_id]
-
+    @feeling.sake_id = params[:sake_id] 
+    @feeling.member_id = current_member.id
+p @feeling.to_s
+p "tetetetetete"
     respond_to do |format|
       if @feeling.save
-        format.html { redirect_to @feeling, notice: 'Feeling was successfully created.' }
+        # format.html { redirect_to @feeling, notice: 'Feeling was successfully created.' }
+        format.html { redirect_to (sake_path(@sake))}
         format.json { render json: @feeling, status: :created, location: @feeling }
       else
         format.html { render action: "new" }
