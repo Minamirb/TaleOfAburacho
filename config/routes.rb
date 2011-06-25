@@ -9,9 +9,12 @@ TaleOfAburacho::Application.routes.draw do
 
   resources :categories
 
-  resources :feelings
+#  resources :feelings
+#  resources :sakes 
 
-  resources :sakes
+  resources :sakes do
+    resources :feelings
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
