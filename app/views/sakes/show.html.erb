@@ -3,6 +3,11 @@
   <div id="sakeImage" >
     <%= image_tag(@sake.url_large, :size=>"90x188") %>
   </div>
+  <% if @my_feel.length >0 %>
+  <div id="starImage" >
+    <img alt="star" src="/star.jpg"/> 
+  </div>
+  <% end %>
   <p style="font-size:20px;"><strong><%= @sake.name %></strong></p>
    <p><%= raw(@sake.comment.gsub("。","。<br>")) %></p>
   <br>
@@ -11,25 +16,24 @@
     <%= price %>
   </p>
 </div>
- 
 <BR clear="left" >
 <div id="feelings" > 
-  <% if @feel.length >0 %>
+  <% if @my_feel.length >0 %>
     <h4 ><b> 感想 </b></h4>
+    <% feel = @my_feel[0] %>
+    <b> 名前: </b>  <%= feel.member_id%>
+    <b> 甘味: </b> <%= feel.doux_brut %>
+    <b> 渋み: </b>  <%= feel.rough %>
+    <b> 濃さ: </b>  <%= feel.hard_right %>
+    <b> 旨味: </b>  <%= feel.umami%>
+    <b> 感想: </b> <%= feel.memo %>
   <% end %>
-  <% feel = @feel[0] %>
-  <b> 名前: </b>  <%= feel.member_id%>
-  <b> 甘味: </b> <%= feel.doux_brut %>
-  <b> 渋み: </b>  <%= feel.rough %>
-  <b> 濃さ: </b>  <%= feel.hard_right %>
-  <b> 旨味: </b>  <%= feel.umami%>
-  <b> 感想: </b> <%= feel.memo %>
 </div>
 <div id="feelings" > 
-  <% if @feel.length >0 %>
+  <% if @our_feel.length >0 %>
     <h4 ><b> コメント</b></h4>
   <% end %>
-  <% @feel.each do |feel| %>
+  <% @our_feel.each do |feel| %>
       <span style ='font-size:12px;color:gray;'><strong>&nbsp;&nbsp; <%= feel.member_id%> &nbsp;&nbsp;&nbsp;&nbsp;</strong>
       <%= feel.updated_at%></span> 
       <br>&nbsp;&nbsp;
@@ -38,7 +42,7 @@
   <% end %>
 </div>
 
-<%= link_to 'Back', sakes_path %>
+<h4 ><%= link_to '←戻る', sakes_path %></h4 >
 <style type="text/css">
 hr.feelsBorder {
 background-color: white;
@@ -61,6 +65,10 @@ padding: 5px 5px 0px 0px;
 }
 div#sakeImage{
 float:left;
+padding: 0px 20px 5px 0px; 
+}
+div#starImage{
+float:right;
 padding: 0px 20px 5px 0px; 
 }
 </style>
