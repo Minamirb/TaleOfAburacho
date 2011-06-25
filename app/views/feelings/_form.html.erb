@@ -11,13 +11,18 @@
     </div>
   <% end %>
 
+ <div id="sakeDetail" > 
+   <div id="sakeImage" >
+     <%= image_tag(@sake.url_large, :size=>"90x188") %>
+   </div>
+   <p style="font-size:20px;"><strong><%= @sake.name %></strong></p>
+   <br>
+ </div>
   <div class="field">
-    <%= f.label :sake_id %><br />
-    <%= f.number_field :sake_id %>
+    <%= @sake._id %>
   </div>
   <div class="field">
-    <%= f.label :member_id %><br />
-    <%= f.number_field :member_id %>
+    <%= current_member.id %>
   </div>
   <div class="field">
     コメント  :  <br />
