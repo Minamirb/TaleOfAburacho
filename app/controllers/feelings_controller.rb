@@ -34,7 +34,9 @@ class FeelingsController < ApplicationController
 
   # GET /feelings/1/edit
   def edit
-    @feeling = Feeling.find(params[:id])
+    @sake= Sake.find(params[:sake_id])
+p "uedayou"
+p    @feeling = @sake.feelings.find(params[:id])
   end
 
   # POST /feelings

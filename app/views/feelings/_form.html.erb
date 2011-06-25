@@ -1,4 +1,4 @@
-<%= form_for(@feeling) do |f| %>
+<%= form_for([@sake,@feeling]) do |f| %>
   <% if @feeling.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@feeling.errors.count, "error") %> prohibited this feeling from being saved:</h2>
