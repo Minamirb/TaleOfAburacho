@@ -20,8 +20,8 @@ class SakesController < ApplicationController
   # GET /sakes/1.json
   def show
     @sake = Sake.find(params[:id])
-
-    @feel =Feeling.where(:sake_id =>params[:id])
+    @my_feel =Feeling.where(:sake_id =>params[:id],:member_id =>current_member.id)
+    @our_feel =Feeling.where( :sake_id =>params[:id]).limit(10).order('updated_at DESC')
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @sake }
