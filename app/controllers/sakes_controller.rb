@@ -9,7 +9,7 @@ class SakesController < ApplicationController
              else
                Sake
              end.all
-    @histories = History.where("member_id = ?", current_member.id).all
+    @histories = History.where("member_id = ?", current_member.id).where("drunk = ?", true).select("sake_id").map{|t| t.sake_id}
 
     respond_to do |format|
       format.html # index.html.erb

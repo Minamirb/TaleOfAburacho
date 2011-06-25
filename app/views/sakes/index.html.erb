@@ -45,7 +45,11 @@
 
       <% @sakes.each do |sake| %>
 	<tr>
-	  <td></td>
+	  <% if @histories.include? sake.id %>
+	    <td>飲んだ</td>
+	  <% else %>
+	    <td>まだ</td>
+	  <% end %>
 	  <td><%= sake.name %></td>
 	  <td><%= image_tag(sake.url_small, :size => "40x80") %></td>
 	  <td><%= link_to '詳細', sake_path(sake) %></td>
