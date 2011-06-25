@@ -2,8 +2,9 @@ class FeelingsController < ApplicationController
   # GET /feelings
   # GET /feelings.json
   def index
-    @feelings = Feeling.all
 
+    @feelings = Feeling.all
+    @sake = Sake.find(params[:sake_id])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @feelings }
@@ -12,20 +13,21 @@ class FeelingsController < ApplicationController
 
   # GET /feelings/1
   # GET /feelings/1.json
-  def show
+  def  show
     @feeling = Feeling.find(params[:id])
-
+    @sake = Sake.find(params[:sake_id])
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @feeling }
     end
   end
 
+
   # GET /feelings/new
   # GET /feelings/new.json
   def new
     @feeling = Feeling.new
-
+    @sake = Sake.find(params[:sake_id])
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @feeling }
@@ -34,15 +36,21 @@ class FeelingsController < ApplicationController
 
   # GET /feelings/1/edit
   def edit
+<<<<<<< HEAD
     @sake= Sake.find(params[:sake_id])
 p "uedayou"
 p    @feeling = @sake.feelings.find(params[:id])
+=======
+    @feeling = Feeling.find(params[:id])
+    @sake = Sake.find(params[:sake_id])
+>>>>>>> edcc9521b72feb4aa3448b34ce1ca46277bb806e
   end
 
   # POST /feelings
   # POST /feelings.json
   def create
     @feeling = Feeling.new(params[:feeling])
+    @feeling.sake_id= params[:sake_id]
 
     respond_to do |format|
       if @feeling.save

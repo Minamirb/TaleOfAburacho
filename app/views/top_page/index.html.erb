@@ -1,21 +1,29 @@
-<div id="container3a">
-  <div class="container3a1" style="margin-top:16px;">
-    <a href="#">About Us</a>
+<% if current_member %>
+  <div id="container3a">
+    <br />
+    <div class="container3a1" style="margin-top:16px;"> 
+      <%= link_to '今飲んでるもの', sakes_path %>
+    </div>
+    <div class="container3a1">
+      <%= link_to '次飲むつもりリスト', histories_path(:next_order => "true") %>
+    </div>
+    <div class="container3a1">
+      <%= link_to '今まで飲んだリスト', histories_path(:drunk => "true") %>
+    </div>
+    <div class="container3a1">
+      <a href="#">最近飲んだリスト</a>
+    </div>
+    <div class="container3a1">&nbsp;</div>
   </div>
-  <div class="container3a1">
-    <a href="#">Serch</a>
+<% else %>
+  <div id="container3a">
+    <br />
+    <div class="container3a1">
+      <%= link_to 'ログイン', new_member_session_path, :class => "links" %>
+    </div>
+    <div class="container3a1">&nbsp;</div>
   </div>
-  <div class="container3a1">
-    <a href="#">最近飲んだ人の感想</a>
-  </div>
-  <div class="container3a1">
-    <a href="#">油長ホームページへ</a>
-  </div>
-  <div class="container3a1">
-    <a href="#">お酒にまつわる話</a>
-  </div>
-  <div class="container3a1">&nbsp;</div>
-</div>
+<% end %>
 
 <div id="container3b">
   <div id="container3b1" style="line-height:14px;">

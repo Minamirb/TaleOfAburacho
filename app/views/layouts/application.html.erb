@@ -27,7 +27,7 @@
       </div>
 
       <div id="header3b">
-	<h2>何する？</h2>
+	<h2>Welcome!</h2>
       </div>
     </div>
     <!-- header ends here-->
@@ -39,46 +39,39 @@
 
       <div id="container2b">
 
-	<% if current_member %>
 	  <div id="container2b1">
-	    下のメニューから選んでください。
+	    ようこそ。
 	  </div>
 
 	  <div class="container2b2" style="margin-top:13px;">
 	    <%= image_tag('icon_arrow.gif', :size=>"8x7", :alt=>"") %>
 	    &nbsp;
-	    <%= link_to '今飲んでるものチェック！', sakes_path, :class => "links" %>
+	    <%= link_to 'About Us', top_page_path, :class => "links" %>
 	  </div>
 
 	  <div class="container2b2">
 	    <%= image_tag('icon_arrow.gif', :size=>"8x7", :alt=>"") %>
 	    &nbsp;&nbsp;&nbsp;
-	    <%= link_to '次飲むつもりリスト', histories_path(:next_order => "true"), :class => "links" %>
+	    <%= link_to 'Serch', top_page_path, :class => "links" %>
 	  </div>
 
 	  <div class="container2b2">
 	    <%= image_tag('icon_arrow.gif', :size=>"8x7", :alt=>"") %>
 	    &nbsp;&nbsp;&nbsp;&nbsp;
-	    <%= link_to '今まで飲んだリスト', histories_path(:drunk => "true"), :class => "links" %>
+	    <%= link_to '最近飲んだ人の感想', top_page_path, :class => "links" %>
 	  </div>
 
 	  <div class="container2b2">
 	    <%= image_tag('icon_arrow.gif', :size=>"8x7", :alt=>"") %>
 	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	    <a href="#" class="links">最近飲んだリスト</a>
+	    <%= link_to '油長ホームページへ', top_page_path, :class => "links" %>
 	  </div>
 
-	<% else %>
-	  <div id="container2b1">
-	    ログインしてください。
-	  </div>
-
-	  <div class="container2b2" style="margin-top:13px;">
+	  <div class="container2b2">
 	    <%= image_tag('icon_arrow.gif', :size=>"8x7", :alt=>"") %>
 	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	    <%= link_to 'ログイン', new_member_session_path, :class => "links" %>
+	    <%= link_to 'お酒にまつわる話', top_page_path, :class => "links" %>
 	  </div>
-	<% end %>
 
       </div>
     </div>	
