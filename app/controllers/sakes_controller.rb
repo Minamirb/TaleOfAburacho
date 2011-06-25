@@ -9,6 +9,7 @@ class SakesController < ApplicationController
              else
                Sake
              end.all
+    @histories = History.where("member_id = ?", current_member.id).all
 
     respond_to do |format|
       format.html # index.html.erb
