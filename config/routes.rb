@@ -9,9 +9,6 @@ TaleOfAburacho::Application.routes.draw do
 
   resources :categories
 
-#  resources :feelings
-#  resources :sakes 
-
   resources :sakes do
     resources :feelings
   end
